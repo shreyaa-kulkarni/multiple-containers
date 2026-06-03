@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web-app:
+    build: .
+    ports:
+      - "8080:3000"
+    depends_on:
+      - redis-db
+
+  redis-db:
+    image: "redis:alpine"
